@@ -1,5 +1,5 @@
 import express from "express";
-import https from "https";
+import http from "http";
 import { Server } from "socket.io";
 import cors from "cors";
 
@@ -13,7 +13,7 @@ app.get("/", (_, res) => {
   res.send("Hello World!");
 });
 
-const server = https.createServer(app);
+const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: "*",
