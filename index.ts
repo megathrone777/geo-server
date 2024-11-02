@@ -1,5 +1,5 @@
 import express from "express";
-import http from "http";
+import https from "https";
 import { Server } from "socket.io";
 import cors from "cors";
 
@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 app.use(express.static("public"));
 
-const server = http.createServer(app);
+const server = https.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: "*",
@@ -29,4 +29,4 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+server.listen(PORT, "0.0.0.0", () => console.log(`Listening on port ${PORT}`));
