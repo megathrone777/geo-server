@@ -4,13 +4,10 @@ import cors from "cors";
 const app = express();
 
 app.use(cors());
-app.set("view engine", "jade");
 // app.use(express.static("public"));
 
 app.get("/", (_, res) => {
-  res.render("index.jade");
+  res.send("<h1>Server running</h1>");
 });
-
-// app.listen(3000, () => console.log("Server ready on port 3000."));
 
 export default app;
