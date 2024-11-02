@@ -9,6 +9,10 @@ const app = express();
 app.use(cors());
 app.use(express.static("public"));
 
+app.get("/", (_, res) => {
+  res.send("Hello World!");
+});
+
 const server = https.createServer(app);
 const io = new Server(server, {
   cors: {
