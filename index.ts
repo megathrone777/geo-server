@@ -3,7 +3,7 @@ import http from "http";
 import { Server } from "socket.io";
 import cors from "cors";
 
-const PORT = 1338;
+const PORT = 80;
 const app = express();
 
 app.use(cors());
